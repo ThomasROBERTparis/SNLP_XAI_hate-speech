@@ -6,3 +6,5 @@ Data/Classifier_data
 Data/ILM
 Data/raw
 ilm/data/char_masks/compound_dataset
+
+wandb/
