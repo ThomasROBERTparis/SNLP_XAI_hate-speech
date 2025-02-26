@@ -8,3 +8,4 @@ Data/raw
 ilm/data/char_masks/compound_dataset
 
 wandb/
+Model/
