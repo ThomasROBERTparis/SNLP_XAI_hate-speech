@@ -529,7 +529,8 @@ def train(args):
           for i, eval_batch in enumerate(eval_dataloader):
             with torch.no_grad():
               eval_inputs, eval_tts = tuple(t.to(device) for t in eval_batch)
-              eval_logits, _ = model(eval_inputs)
+              eval_logits = model(eval_inputs) # eval_logits, _ = model(eval_inputs)
+              print(eval_logits.shape)
               eval_logits_relevant = eval_logits[:, :-1].contiguous().view(-1, eval_logits.shape[-1])
 
               for tag, tts in [
