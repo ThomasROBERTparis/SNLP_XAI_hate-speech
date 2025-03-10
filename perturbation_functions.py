@@ -1,8 +1,8 @@
 import numpy as np
 import torch
-import ilm
-import ilm.tokenize_util
-from ilm.infer import infill_with_ilm
+import ilm.ilm
+import ilm.ilm.tokenize_util
+from ilm.ilm.infer import infill_with_ilm
 from math import ceil
 
 
