@@ -8,3 +8,6 @@ Data/raw
 ilm/data/char_masks/compound_dataset
 .venv/
 wandb/
+*.pkl
+*.npy
+*.tsv
