@@ -136,7 +136,7 @@ def infill_masked(masked, model, additional_tokens_to_ids, tokenizer, num_infill
     generated = []
     for mm in masked:
         gg = infill_with_ilm(model, additional_tokens_to_ids, mm, num_infills=num_infills)[0]
-        generated.append(ilm.tokenize_util.decode(gg, tokenizer).strip(":"))
+        generated.append(ilm.ilm.tokenize_util.decode(gg, tokenizer).strip(":"))
     return generated
 
 
@@ -214,6 +214,7 @@ def calculate_necc_and_suff(text, ilm_tokenizer, ilm_model, cl_tokenizer, cl_mod
 
     if return_pert_only:
         return necc_perturbed, suff_perturbed, necc_masks, suff_masks
+
 
     orig_pred, necc_preds = get_preds(text, necc_perturbed, cl_model, cl_tokenizer, binary=binary)
     _, suff_preds = get_preds(text, suff_perturbed, cl_model, cl_tokenizer, binary=binary)
