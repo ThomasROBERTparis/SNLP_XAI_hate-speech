@@ -57,7 +57,7 @@ def main(args):
     suff_masks = []
 
     with open(f"Data/HateCheck_test_suite_cases_{args.dataset_name}.txt", "r") as ff:
-        with tqdm(total=240) as pbar:
+        with tqdm(total=20) as pbar:
                 for i, text in enumerate(ff):
                     with contextlib.redirect_stdout(io.StringIO()):
                         necc_pp, suff_pp, necc_mm, suff_mm = calculate_necc_and_suff(text, ilm_tokenizer=tokenizer, ilm_model=model, cl_tokenizer=None, cl_model=None, num_samples=num_samples,
