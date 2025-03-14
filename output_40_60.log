@@ -1,4 +1,4 @@
 The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
 {50257: '<|startofinfill|>', 50258: '<|endofinfill|>', 50259: '<|infill_document|>', 50260: '<|infill_paragraph|>', 50261: '<|infill_sentence|>', 50262: '<|infill_ngram|>', 50263: '<|infill_word|>'}
 {'<|startofinfill|>': 50257, '<|endofinfill|>': 50258, '<|infill_document|>': 50259, '<|infill_paragraph|>': 50260, '<|infill_sentence|>': 50261, '<|infill_ngram|>': 50262, '<|infill_word|>': 50263}
-  0%|          | 0/20 [00:00<?, ?it/s]
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [25:10<7:58:26, 1510.87s/it] 10%|█         | 2/20 [50:28<7:34:24, 1514.67s/it] 15%|█▌        | 3/20 [1:15:45<7:09:32, 1516.04s/it] 20%|██        | 4/20 [1:41:03<6:44:26, 1516.66s/it]
