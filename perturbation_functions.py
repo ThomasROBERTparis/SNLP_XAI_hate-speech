@@ -158,9 +158,7 @@ def get_preds_and_scores(texts, tokenizer, model, pbar=None, batchsize=64):
     preds = []
     scores = []
     nn = 0
-    print('texts length:', len(texts))
     while nn<len(texts):
-        print('scoring in progress :', nn, '/', len(texts), end='\r')
         batch = texts[nn:nn+batchsize]
         nn += batchsize
         encodings = tokenizer(batch, truncation=True, padding=True, return_tensors="pt")
