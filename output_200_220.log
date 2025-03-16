@@ -1,4 +1,24 @@
 The new embeddings will be initialized from a multivariate normal distribution that has old embeddings' mean and covariance. As described in this article: https://nlp.stanford.edu/~johnhew/vocab-expansion.html. To disable this, use `mean_resizing=False`
 {50257: '<|startofinfill|>', 50258: '<|endofinfill|>', 50259: '<|infill_document|>', 50260: '<|infill_paragraph|>', 50261: '<|infill_sentence|>', 50262: '<|infill_ngram|>', 50263: '<|infill_word|>'}
 {'<|startofinfill|>': 50257, '<|endofinfill|>': 50258, '<|infill_document|>': 50259, '<|infill_paragraph|>': 50260, '<|infill_sentence|>': 50261, '<|infill_ngram|>': 50262, '<|infill_word|>': 50263}
-  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [27:11<8:36:36, 1631.40s/it] 10%|█         | 2/20 [54:21<8:09:13, 1630.73s/it] 15%|█▌        | 3/20 [1:21:33<7:42:08, 1631.06s/it] 20%|██        | 4/20 [1:48:43<7:14:51, 1630.74s/it] 25%|██▌       | 5/20 [2:12:38<6:30:01, 1560.10s/it]
+  0%|          | 0/20 [00:00<?, ?it/s]  5%|▌         | 1/20 [27:11<8:36:36, 1631.40s/it] 10%|█         | 2/20 [54:21<8:09:13, 1630.73s/it] 15%|█▌        | 3/20 [1:21:33<7:42:08, 1631.06s/it] 20%|██        | 4/20 [1:48:43<7:14:51, 1630.74s/it] 25%|██▌       | 5/20 [2:12:38<6:30:01, 1560.10s/it] 30%|███       | 6/20 [2:36:33<5:54:05, 1517.52s/it] 35%|███▌      | 7/20 [3:00:28<5:22:58, 1490.66s/it]/pytorch/aten/src/ATen/native/cuda/TensorCompare.cu:110: _assert_async_cuda_kernel: block: [0,0,0], thread: [0,0,0] Assertion `probability tensor contains either `inf`, `nan` or element < 0` failed.
+ 35%|███▌      | 7/20 [3:13:17<5:58:59, 1656.86s/it]
+Traceback (most recent call last):
+  File "/users/eleves-b/2021/valentin.dorseuil/Desktop/SNLP_XAI_hate-speech/3_generate_hatecheck.py", line 114, in <module>
+    main(args)
+  File "/users/eleves-b/2021/valentin.dorseuil/Desktop/SNLP_XAI_hate-speech/3_generate_hatecheck.py", line 63, in main
+    necc_pp, suff_pp, necc_mm, suff_mm = calculate_necc_and_suff(text, ilm_tokenizer=tokenizer, ilm_model=model, cl_tokenizer=None, cl_model=None, num_samples=num_samples,
+                                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/eleves-b/2021/valentin.dorseuil/Desktop/SNLP_XAI_hate-speech/perturbation_functions.py", line 213, in calculate_necc_and_suff
+    suff_perturbed = infill_masked(suff_masked, ilm_model, additional_tokens_to_ids, ilm_tokenizer)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/eleves-b/2021/valentin.dorseuil/Desktop/SNLP_XAI_hate-speech/perturbation_functions.py", line 138, in infill_masked
+    gg = infill_with_ilm(model, additional_tokens_to_ids, mm, num_infills=num_infills)[0]
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/users/eleves-b/2021/valentin.dorseuil/Desktop/SNLP_XAI_hate-speech/ilm/ilm/infer.py", line 92, in infill_with_ilm
+    if torch.any(terminate):
+RuntimeError: CUDA error: device-side assert triggered
+CUDA kernel errors might be asynchronously reported at some other API call, so the stacktrace below might be incorrect.
+For debugging consider passing CUDA_LAUNCH_BLOCKING=1
+Compile with `TORCH_USE_CUDA_DSA` to enable device-side assertions.
+
