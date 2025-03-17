@@ -109,6 +109,6 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
-    parser.add_argument("--dataset_name", help="dataset_name, likee '0_40', '0_80', ...", type=str)
+    parser.add_argument("--dataset_name", help="dataset_name, like '0_40', '0_80', ...", type=str)
     args = parser.parse_args()
     main(args)
