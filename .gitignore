@@ -10,4 +10,4 @@ ilm/data/char_masks/compound_dataset
 wandb/
 *.pkl
 *.npy
-*.tsv
+Data/hatecheck_perturbations/results_split/*
