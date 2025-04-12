@@ -3,8 +3,8 @@ import unittest
 
 from transformers import GPT2Tokenizer
 
-from ilm.datasets import roc_stories
-from ilm.tokenize_util import *
+from ilm.ilm.datasets import roc_stories
+from ilm.ilm.tokenize_util import *
 
 class TestTokenizeUtil(unittest.TestCase):
 

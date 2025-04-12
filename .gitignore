@@ -7,4 +7,8 @@ Data/raw
 ilm/data/char_masks/compound_dataset
 
 wandb/
-Model/
+Model/.venv/
+wandb/
+*.pkl
+*.npy
+Data/hatecheck_perturbations/results_split/*

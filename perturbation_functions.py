@@ -1,6 +1,6 @@
 import numpy as np
 import torch
-import ilm
+import ilm.ilm
 import ilm.ilm.tokenize_util
 from ilm.ilm.infer import infill_with_ilm
 from math import ceil
@@ -104,7 +104,7 @@ def generate_masked_text(orig_text, num_samples, mask_tokn, tokenizer, reverse=F
         subtext = ""
         for ii, qq in enumerate(mm):
             if qq and subtext:
-                token_ids = token_ids + ilm.tokenize_util.encode(subtext.rstrip(), tokenizer) + [mask_tokn]
+                token_ids = token_ids + ilm.ilm.tokenize_util.encode(subtext.rstrip(), tokenizer) + [mask_tokn]
                 subtext = " "
             elif qq:
                 token_ids = token_ids + [mask_tokn]
@@ -114,7 +114,7 @@ def generate_masked_text(orig_text, num_samples, mask_tokn, tokenizer, reverse=F
             else:
                 subtext = split_txt[ii] + " "
         if subtext:
-            token_ids = token_ids + ilm.tokenize_util.encode(subtext.rstrip(), tokenizer)
+            token_ids = token_ids + ilm.ilm.tokenize_util.encode(subtext.rstrip(), tokenizer)
 
         if merge_conseq_infills:
             merged_token_ids = [token_ids[0]]
@@ -136,7 +136,7 @@ def infill_masked(masked, model, additional_tokens_to_ids, tokenizer, num_infill
     generated = []
     for mm in masked:
         gg = infill_with_ilm(model, additional_tokens_to_ids, mm, num_infills=num_infills)[0]
-        generated.append(ilm.tokenize_util.decode(gg, tokenizer).strip(":"))
+        generated.append(ilm.ilm.tokenize_util.decode(gg, tokenizer).strip(":"))
     return generated
 
 
@@ -214,6 +214,7 @@ def calculate_necc_and_suff(text, ilm_tokenizer, ilm_model, cl_tokenizer, cl_mod
 
     if return_pert_only:
         return necc_perturbed, suff_perturbed, necc_masks, suff_masks
+
 
     orig_pred, necc_preds = get_preds(text, necc_perturbed, cl_model, cl_tokenizer, binary=binary)
     _, suff_preds = get_preds(text, suff_perturbed, cl_model, cl_tokenizer, binary=binary)

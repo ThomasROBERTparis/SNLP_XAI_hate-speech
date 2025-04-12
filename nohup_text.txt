@@ -1,0 +1,6 @@
+nohup python 3_generate_hatecheck.py --dataset_name "0_40" > output_0_40.log 2>&1 &
+nohup python 3_generate_hatecheck.py --dataset_name "40_80" > output_40_80.log 2>&1 &
+nohup python 3_generate_hatecheck.py --dataset_name "80_120" > output_80_120.log 2>&1 &
+nohup python 3_generate_hatecheck.py --dataset_name "120_160" > output_120_160.log 2>&1 &
+nohup python 3_generate_hatecheck.py --dataset_name "160_200" > output_160_200.log 2>&1 &
+nohup python 3_generate_hatecheck.py --dataset_name "200_240" > output_200_240.log 2>&1 &
