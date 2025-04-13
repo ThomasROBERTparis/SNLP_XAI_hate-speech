@@ -1,3 +1,6 @@
+MVA 2024/2025 **Valentin Dorseuil, Thomas Robert, Mouad Id Sougou and Imen Wafra** student project repository for the [Algorithms for speech and language processing](https://github.com/chloedaphne/MVA_2025_SNLP) based on the ["Necessity and Sufficiency for Explaining Text Classifiers: A Case Study in Hate Speech Detection"](https://arxiv.org/abs/2205.03302) by Esma Balkir, Isar Nejadgholi, Kathleen C. Fraser, and Svetlana Kiritchenko.
+
+# necessity-sufficiency
 
 This repository contains all the code and the experimental results for the paper ["Necessity and Sufficiency for Explaining Text Classifiers: A Case Study in Hate Speech Detection"](https://arxiv.org/abs/2205.03302) by Esma Balkir, Isar Nejadgholi, Kathleen C. Fraser, and Svetlana Kiritchenko.
 
